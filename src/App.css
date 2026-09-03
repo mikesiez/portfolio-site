@@ -1,18 +1,73 @@
 @import "tailwindcss";
 
-
 * {
-  background-color: rgb(20, 20, 20);
   color: white;
 }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+}
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(99, 212, 255, 0.3);
+  --accent: #63d4ff;
+  --accent-2: #a78bfa;
+  --text-primary: #e8eaf0;
+  --text-secondary: #8b8fa8;
+}
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(1vw);
+  border: 1px solid var(--border-subtle);
+}
+
 
 @layer components {
   .taskbar {
     @apply
-      h-[5vh] h-full max-w-[98%] ml-[1vw]
-      justify-center grid grid-cols-3
-      border-t border-cyan-300
-      py-2
-      ;
+      relative
+      px-[2%] py-[0.5%] items-center
+      grid grid-cols-[20%_60%_20%] grid-rows-1
+      
   }
+  .appIcon {
+    @apply 
+    shadow-lg hover:shadow-gray-500/30 hover:scale-105 transition cursor-pointer bg-transparent overflow-visible
+    border border-dashed border-cyan-500/30 rounded-lg
+  }
+  .taskbarText{
+    @apply text-[3vh] h-full w-full
+  }
+  .tbAppTitle{
+    @apply 
+    text-[1.5vh] rounded px-[0.3vw]
+    justify-self-center absolute bottom-[135%] 
+    bg-transparent group-hover:bg-gray-400/30
+    text-transparent group-hover:text-white
+    transition-all duration-300
+  }
+}
+
+.taskbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(103 232 249) 10%,
+    rgb(103 232 249) 90%,
+    transparent 100%
+  );
 }
