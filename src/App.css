@@ -1,15 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo%202:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
-
-* {
-  color: white;
-}
 
 html, body, #root {
   height: 100%;
 }
 
 body {
+  color: white;
   background-color: rgb(20, 20, 20);
+  font-family: 'Exo 2', sans-serif;
 }
 
 :root {
@@ -26,7 +25,7 @@ body {
 .glass {
   background: var(--bg-glass);
   backdrop-filter: blur(1vw);
-  border: 1px solid var(--border-subtle);
+  border: 0.12vw solid var(--border-subtle);
 }
 
 
@@ -36,19 +35,18 @@ body {
       relative
       px-[2%] py-[0.5%] items-center
       grid grid-cols-[20%_60%_20%] grid-rows-1
-      
   }
   .appIcon {
     @apply 
-    shadow-lg hover:shadow-gray-500/30 hover:scale-105 transition cursor-pointer bg-transparent overflow-visible
-    border border-dashed border-cyan-500/30 rounded-lg
-  }
-  .taskbarText{
-    @apply text-[3vh] h-full w-full
+    hover:shadow-lg shadow-cyan-500/30 
+    hover:scale-105  hover:cursor-pointer 
+    /* border border-cyan-500/30  bg-transparent USING GLASS*/
+    rounded-[4%]
+    overflow-visible transition
   }
   .tbAppTitle{
     @apply 
-    text-[1.5vh] rounded px-[0.3vw]
+    text-[1.5vh] rounded-[0.35vh] px-[0.3vw] py-[0.2vh]
     justify-self-center absolute bottom-[135%] 
     bg-transparent group-hover:bg-gray-400/30
     text-transparent group-hover:text-white
@@ -62,8 +60,18 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 1px;
+  height: .1vh;
   background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(103 232 249) 10%,
+    rgb(103 232 249) 90%,
+    transparent 100%
+  );
+}
+
+.bgGrad {
+  background-image: linear-gradient(
     to right,
     transparent 0%,
     rgb(103 232 249) 10%,
