@@ -22,19 +22,21 @@ body {
   --text-primary: #e8eaf0;
   --text-secondary: #8b8fa8;
 }
-.glass {
-  background: var(--bg-glass);
-  backdrop-filter: blur(1vw);
-  border: 0.12vw solid var(--border-subtle);
-}
 
+@utility glass {
+  @apply
+  bg-(--bg-glass)
+  backdrop-blur-[1vw]
+  border-[0.12vw]
+  border-(--border-subtle)
+}
 
 @layer components {
   .taskbar {
     @apply
-      relative
-      px-[2%] py-[0.5%] items-center
-      grid grid-cols-[20%_60%_20%] grid-rows-1
+    relative
+    px-[2%] py-[0.5%] items-center
+    grid grid-cols-[20%_60%_20%] grid-rows-1
   }
   .appIcon {
     @apply 
@@ -44,13 +46,34 @@ body {
     rounded-[4%]
     overflow-visible transition
   }
-  .tbAppTitle{
+  .tbAppTitle {
     @apply 
     text-[1.5vh] rounded-[0.35vh] px-[0.3vw] py-[0.2vh]
     justify-self-center absolute bottom-[135%] 
     bg-transparent group-hover:bg-gray-400/30
     text-transparent group-hover:text-white
     transition-all duration-300
+  }
+  .topBarIcon {
+    @apply
+    aspect-square w-auto h-full py-[5%]
+    hover:scale-110 transition cursor-pointer
+  }
+  .OSIcon {
+    @apply 
+    rounded-[25%] flex items-center justify-center w-[1.8vw] h-[1.8vw] 
+    text-[0.7vw] text-black font-bold
+    bg-(--accent) hover:bg-(--accent-2) hover:cursor-pointer shadow-lg hover:shadow-white/50
+    transition-colors
+  }
+  .appMainDiv{
+    @apply 
+    glass
+    w-[70vw] h-[70vh] ml-[15vw] mt-[15vh]
+    rounded absolute z-100 transition-all
+  }
+  .appMainDiv[data-maximized="true"]{
+    @apply w-full h-full m-0
   }
 }
 
@@ -62,16 +85,6 @@ body {
   width: 100%;
   height: .1vh;
   background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgb(103 232 249) 10%,
-    rgb(103 232 249) 90%,
-    transparent 100%
-  );
-}
-
-.bgGrad {
-  background-image: linear-gradient(
     to right,
     transparent 0%,
     rgb(103 232 249) 10%,

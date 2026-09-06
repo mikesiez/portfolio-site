@@ -1,4 +1,0 @@
-make apps dynamic based on existing apps in apps folder on desktop
-match icons + names to apps after making dynamic 
-add links to profile card
-make app opening functionality
