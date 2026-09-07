@@ -140,7 +140,7 @@ function App() {
 
         <div id="taskbar" className="h-[5.5%] taskbar glass">
           <div className="flex" >
-            <div className="OSIcon">OS</div>
+            <div className="OSIcon flex items-center justify-center">OS</div>
             <p className="ml-[3%] text-gray-400/50 text-[0.9vw] pt-[1%] text-center">portfolio</p>
           </div>
           <div id="taskbarApps" className="h-full w-full flex justify-center space-x-5">

@@ -61,7 +61,7 @@ body {
   }
   .OSIcon {
     @apply 
-    rounded-[25%] flex items-center justify-center w-[1.8vw] h-[1.8vw] 
+    rounded-[25%] w-[1.8vw] h-[1.8vw] 
     text-[0.7vw] text-black font-bold
     bg-(--accent) hover:bg-(--accent-2) hover:cursor-pointer shadow-lg hover:shadow-white/50
     transition-colors

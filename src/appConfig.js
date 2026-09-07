@@ -9,7 +9,7 @@ export const appConfig = {
 
     projects: {
         name: "Projects",
-        desc: "Thing's I've worked on",
+        desc: "Things I've worked on",
         icon: CgBriefcase,
     },
 };
