@@ -12,6 +12,10 @@ function name() {
     return (
         <div className="appMainDiv" data-maximized={maximized}>
             <Topbar maximize={maximize} maximized={maximized} Icon={config.icon} name={config.name} desc={config.desc}/>
+
+            <div id="appContent" className="appContainer">
+                
+            </div>
         </div>
     )
 }

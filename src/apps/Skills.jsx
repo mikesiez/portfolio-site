@@ -31,39 +31,39 @@ function Skills() {
         <div className="appMainDiv" data-maximized={maximized}>
             <Topbar maximize={maximize} maximized={maximized} Icon={config.icon} name={config.name} desc={config.desc}/>
 
-            <div id="appContent" className="@container flex-1 min-h-0 overflow-y-auto">
+            <div id="appContent" className="appContainer">
 
                 {Object.entries(skills).map(([category, items]) => (
                 <section
                     key={category}
-                    className="w-[88%] ml-[6%] mb-[7%]"
+                    className="w-[90%] ml-[5%] mb-[3%]"
                 >
 
-                    <h2 className="text-[2.5cqw] text-(--accent) font-mono tracking-widest">
+                    <h2 className="text-[2cqw] text-(--accent) font-mono tracking-widest">
                     // {category.toUpperCase()}
                     </h2>
 
-                    <div className="mt-[3%] space-y-[4%]">
+                    <div className="ml-[1%] mt-[-0.5%]">
 
                     {items.map(([skill, level]) => (
-                        <div key={skill}>
+                        <div key={skill} className="mt-[1%] w-[98%]">
 
-                        <div className="flex justify-between">
-                            <span className="text-[2.8cqw]">
-                            {skill}
-                            </span>
+                            <div className="flex justify-between">
+                                <span className="text-[1.6cqw]">
+                                {skill}
+                                </span>
 
-                            <span className="text-[2cqw] text-gray-500">
-                            {level > 90 ? "Expert" : level > 80 ? "Strong" : level > 60 ? "Good" : level > 25 ? "Familiar" : "Unfamiliar"}
-                            </span>
-                        </div>
+                                <span className="text-[1.6cqw] text-gray-500">
+                                {level > 90 ? "Expert" : level > 80 ? "Strong" : level > 60 ? "Good" : level > 25 ? "Familiar" : "Unfamiliar"}
+                                </span>
+                            </div>
 
-                        <div className="w-full h-[0.7cqh] bg-white/5 mt-[1%]">
-                            <div
-                            className="h-full bg-(--accent) shadow-[0_0_8px_var(--accent)]"
-                            style={{ width: `${level}%` }}
-                            />
-                        </div>
+                            <div className="w-full h-[0.4cqh] bg-white/5 mt-[-0.4%]">
+                                <div
+                                className="h-full bg-(--accent) shadow-[0_0_8px_var(--accent)]"
+                                style={{ width: `${level}%` }}
+                                />
+                            </div>
 
                         </div>
                     ))}

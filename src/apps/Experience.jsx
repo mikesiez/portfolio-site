@@ -43,7 +43,7 @@ function ExperienceCard({ experience, index }) {
 
       <button
         onClick={() => setOpen(!open)}
-        className="w-full text-left grid grid-cols-[8%_1fr_auto] items-center p-[3%] hover:bg-white/[0.04] transition"
+        className="w-full text-left grid grid-cols-[8%_1fr_auto] items-center px-[2%] py-[1.3%] hover:bg-white/[0.04] hover:cursor-pointer transition"
       >
 
         <span className="text-[2cqw] text-(--accent) font-mono">
@@ -51,19 +51,19 @@ function ExperienceCard({ experience, index }) {
         </span>
 
         <div>
-          <h2 className="text-[4cqw] leading-none">
+          <h2 className="text-[2.5cqw] leading-none">
             {experience.title}
           </h2>
 
-          <p className="text-[2.5cqw] text-gray-500 mt-[1%]">
+          <p className="text-[2cqw] text-gray-400 mt-[0.5%]">
             {experience.employer}
             <span className="mx-[1%]">•</span>
             {experience.period}
           </p>
         </div>
 
-        <span className="text-[3cqw] text-gray-500">
-          {open ? "−" : "+"}
+        <span className="text-[4cqw] text-gray-500">
+          {open ? "-" : "+"}
         </span>
       </button>
 
@@ -75,22 +75,22 @@ function ExperienceCard({ experience, index }) {
       >
         <div className="overflow-hidden">
 
-          <div className="border-t border-white/10 p-[4%]">
+          <div className="border-t border-white/10 px-[3%] py-[2%]">
 
-            <p className="text-[2.7cqw] text-gray-300/80 leading-relaxed">
+            <p className="text-[1.7cqw] text-gray-200/80 leading-relaxed">
               {experience.description}
             </p>
 
-            <div className="mt-[5%]">
+            <div className="mt-[2%] ml-[1%]">
               <p className="text-[2cqw] text-(--accent) font-mono tracking-widest">
                 // DETAILS
               </p>
 
-              <ul className="mt-[2%] space-y-[1.5%]">
+              <ul className="mt-[0.3%] space-y-[0.4%] ml-[1%]">
                 {experience.details.map((detail) => (
                   <li
                     key={detail}
-                    className="text-[2.4cqw] text-gray-400 flex gap-[2%]"
+                    className="text-[1.8cqw] text-gray-300 flex gap-[2%]"
                   >
                     <span className="text-(--accent)">›</span>
                     {detail}
@@ -99,11 +99,11 @@ function ExperienceCard({ experience, index }) {
               </ul>
             </div>
 
-            <div className="mt-[5%] flex flex-wrap gap-[1.5%]">
+            <div className="mt-[3%] flex flex-wrap gap-[1.5%]">
               {experience.skills.map(skill => (
                 <span
                   key={skill}
-                  className="text-[2cqw] px-[2%] py-[1%] rounded-full
+                  className="text-[1.7cqw] px-[2%] py-[0.5%] rounded-full
                   border border-(--accent)/30
                   text-(--accent)
                   bg-(--accent)/5"
@@ -122,37 +122,37 @@ function ExperienceCard({ experience, index }) {
 
 function Experience() {
   const [maximized, setMaximized] = useState(false);
+    function maximize() {
+        setMaximized(!maximized);
+    }
 
   return (
     <div className="appMainDiv" data-maximized={maximized}>
 
-      <Topbar
-        maximize={() => setMaximized(!maximized)}
-        maximized={maximized}
-        Icon={config.icon}
-        name={config.name}
-        desc={config.desc}
-      />
+      <Topbar maximize={maximize} maximized={maximized} Icon={config.icon} name={config.name} desc={config.desc}/>
 
-      <div className="@container flex-1 min-h-0 overflow-y-auto">
+      <div className="appContainer">
 
-        <div className="w-full pt-[5%] pb-[8%]">
+        <div className="w-full">
 
-          <div className="w-[92%] ml-[4%] mb-[6%]">
-            <p className="text-[2cqw] text-(--accent) font-mono tracking-[0.2em]">
+          <div className="w-[92%] ml-[4%] mb-[1%]">
+            <p className="text-[2cqw] text-(--accent) font-mono tracking-widest">
               // CAREER_LOG
             </p>
 
-            <h1 className="text-[7cqw] mt-[1%]">
+            {/* <h1 className="text-[3cqw] ml-[1%]">
               Experience
-            </h1>
+            </h1> */}
 
-            <p className="text-[2.5cqw] text-gray-500 mt-[1%]">
+            <p className="text-[2cqw] text-gray-500 italic ml-[2%]">
               Places I've worked, taught, organized, and learned.
             </p>
           </div>
 
-          <div className="space-y-[2%]">
+          <hr className="mb-[1%] w-[90%] ml-[5%] border-none h-[0.1cqh]
+      bg-[linear-gradient(to_right,transparent_0%,var(--accent)_10%,var(--accent)_90%,transparent_100%)]"/>
+
+          <div className="space-y-[1%]">
             {experiences.map((experience, index) => (
               <ExperienceCard
                 key={experience.title}

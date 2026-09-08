@@ -1,0 +1,3 @@
+fix shadow not ampping to color (cant tailwind it apparentyl)
+add education with courses, grade, and cgpa
+seperate for electives and major courses

@@ -28,7 +28,7 @@ function ProfCard() {
       </div> 
 
       <hr className="mb-[2vh] mt-[1vh] w-[85%] ml-[7.5%] border-none h-[0.15vh] 
-      bg-[linear-gradient(to_right,transparent_0%,rgb(103_232_249)_10%,rgb(103_232_249)_90%,transparent_100%)]"/>
+      bg-[linear-gradient(to_right,transparent_0%,var(--accent)_10%,var(--accent)_90%,transparent_100%)]"/>
 
       <div className="flex w-[60%] h-[5%] ml-[5%] items-center">
         <span className="rounded-full h-[30%] aspect-square bg-[#4ade80] shadow-[0_0_6px_#4ade80]"/>
