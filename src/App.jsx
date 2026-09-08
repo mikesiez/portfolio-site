@@ -5,7 +5,7 @@ import './Globals.css'
 
 import ProfCard from './components/ProfCard'
 
-function DesktopApp({name, Icon, id, openApp}) {
+function DesktopApp({name, Icon, openApp}) {
   return (
     <button 
       className="@container appIcon glass p-0.5 w-full aspect-square grid grid-rows-[75%_20%]"
@@ -117,14 +117,13 @@ function App() {
           <div className="absolute rounded-full opacity-10 w-[35vw] h-[35vw] blur-[8vw] bg-(--accent-2) bottom-[-10vh] right-[15vw]"/>
         </div>
 
-        <div id="desktop" className="flex-1 py-[1%] px-[1%] w-full h-full grid grid-cols-[20vw_44vw_35vw]">
+        <div id="desktop" className="flex-1 py-[1%] px-[1%] w-full grid grid-cols-[20vw_44vw_35vw]">
           <div id="apps" className="grid grid-cols-3 auto-rows-min gap-y-[2%] gap-x-[4%]">
             {apps.map(app => (
               <DesktopApp
                 name={app.name}
                 Icon={app.icon}
                 key={app.id}
-                id={app.id}
                 openApp={() => openApp(app.id)}
               />
             ))}
@@ -138,14 +137,14 @@ function App() {
           </div>
         </div>
 
-        <div id="taskbar" className="h-[5.5%] taskbar glass">
-          <div className="flex" >
-            <div className="OSIcon flex items-center justify-center">OS</div>
-            <p className="ml-[3%] text-gray-400/50 text-[0.9vw] pt-[1%] text-center">portfolio</p>
+        <div id="taskbar" className="h-[5%] taskbar glass">
+          <div className="flex">
+            <div className="OSIcon text-[min(0.7vw,2.3vh)] flex items-center justify-center">OS</div>
+            <p className="ml-[3%] text-gray-400/50 text-[min(0.9vw,3vh)] pt-[1%] text-center">portfolio</p>
           </div>
           <div id="taskbarApps" className="h-full w-full flex justify-center space-x-5">
 
-            {openApps.length === 0 ? <p className="text-gray-500 text-[1vw]">//</p> : 
+            {openApps.length === 0 ? <p className="text-gray-500 text-[min(1.1vw,1.7vh)]">//</p> : 
             openApps.map(appId => {
               const app = apps.find(a => a.id === appId);
 
@@ -162,8 +161,8 @@ function App() {
 
           </div>
           <div id="clock" className="text-right leading-none">
-            <p className="text-[1vw] text-white">{time}</p>
-            <p className="text-[0.7vw] text-gray-400">{date}</p>
+            <p className="text-[min(1vw,1.8vh)] text-white">{time}</p>
+            <p className="text-[min(0.7vw,1.8vh)] text-gray-400">{date}</p>
           </div>
         </div>
       </section>

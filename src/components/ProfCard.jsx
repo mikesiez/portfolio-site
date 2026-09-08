@@ -9,7 +9,6 @@ const profile = {
   socials: [
     { platform: "Github", url: "https://github.com/mikesiez", icon: FaGithub },
     { platform: "LinkedIn", url: "https://linkedin.com/in/michaelalhk", icon: FaLinkedin },
-    { platform: "Instagram", url: "https://instagram.com/michael_alhk", icon: FaInstagram },
     { platform: "Email", url: "mailto:malhouwayek@gmail.com", icon: CiMail },
   ],
 };
@@ -19,23 +18,23 @@ function ProfCard() {
     <div id="profileCard" className="@container glass rounded-[2%] h-[85%] mt-[10%] w-[90%] ">
       <div className="absolute top-0 left-0 right-0 h-[0.1vh] bg-[linear-gradient(90deg,transparent,var(--accent),transparent)]"/> {/*top gradient*/}
       
-      <div id="profTop" className="w-[75%] grid grid-rows-1 grid-cols-[25%_75%] ml-[5%] mt-[5%] h-[20%]">
+      <div id="profTop" className="items-center w-[75%] h-[20%] grid grid-rows-1 grid-cols-[25%_75%] ml-[5%] mt-[5%]">
         <img src={profile.avatar}
-          className="glass rounded-[9%] aspect-square w-full "/>
-        <div className="flex flex-col pl-[7%]">
-          <h1 className="mt-[8%] text-[5cqw] tracking-wide ">{profile.name}</h1>
-          <h1 className="text-[2.8cqw] tracking-wide text-(--accent)">{profile.title}</h1>
+          className="glass rounded-[9%] h-[min(6vw,12vh)] w-[min(6vw,12vh)] justify-self-center"/>
+        <div className="pl-[5%]">
+          <h1 className="text-[min(5cqw,3cqh)] tracking-wide">{profile.name}</h1>
+          <h1 className="text-[min(2.8cqw,1.8cqh)] tracking-wide text-(--accent)">{profile.title}</h1>
         </div>
-      </div>
+      </div> 
 
-      <hr className="mb-[2vh] w-[85%] ml-[7.5%] border-none h-[0.15vh] 
+      <hr className="mb-[2vh] mt-[1vh] w-[85%] ml-[7.5%] border-none h-[0.15vh] 
       bg-[linear-gradient(to_right,transparent_0%,rgb(103_232_249)_10%,rgb(103_232_249)_90%,transparent_100%)]"/>
 
       <div className="flex w-[60%] h-[5%] ml-[5%] items-center">
         <span className="rounded-full h-[30%] aspect-square bg-[#4ade80] shadow-[0_0_6px_#4ade80]"/>
-        <p className="text-[3cqw] text-gray-400/70 ml-[4%] tracking-widest">Available for work</p>
+        <p className="text-[min(3cqw,2cqh)] text-gray-400/70 ml-[4%] tracking-widest">Available for work</p>
       </div>
-      <div id="bottom container" className="*:text-[3.7cqw] ml-[6%] mt-[2%] w-[88%]">
+      <div id="bottom container" className="*:text-[min(3.7cqw,2.5cqh)] ml-[6%] mt-[2%] w-[88%]">
         <p className="w-full text-white/75">
           {profile.bio}
         </p>
@@ -45,7 +44,7 @@ function ProfCard() {
       bg-[linear-gradient(to_right,transparent_0%,rgb(59_59_59)_10%,rgb(59_59_59)_90%,transparent_100%)] opacity-80"/>
 
       <div className="flex flex-col gap-[0.8vh] ml-[5%]">
-        <p className="text-[3.5cqw] text-(--accent)">// LINKS</p>
+        <p className="text-[min(3.5cqw,2.5cqh)] text-(--accent)">// LINKS</p>
         {profile.socials.map((social) => {
           const IconComponent = social.icon;
           return (
@@ -54,7 +53,7 @@ function ProfCard() {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-[0.5vw] text-(--text-secondary) text-[3.2cqw]"
+              className="flex items-center gap-[0.5vw] text-(--text-secondary) text-[min(3.2cqw,2.5cqh)]"
             >
               <IconComponent className="aspect-square w-[5%]"/>
               <span>{social.platform}</span>
