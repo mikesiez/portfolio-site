@@ -36,7 +36,8 @@ body::after {
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-accent: rgba(99, 212, 255, 0.3);
   --accent: #63d4ff;
-  --accent-2: #a78bfa;
+  /* --accent-2: #a78bfa; */
+  --accent-2: white;
   --text-primary: #e8eaf0;
   --text-secondary: #8b8fa8;
 }
@@ -93,6 +94,10 @@ body::after {
   .appMainDiv[data-maximized="true"]{
     @apply w-full h-full m-0
   }
+  .appContainer{
+    @apply
+      @container flex-1 min-h-0 overflow-y-auto pt-[2%]
+  }
 }
 
 .taskbar::before {
@@ -105,8 +110,8 @@ body::after {
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgb(103 232 249) 10%,
-    rgb(103 232 249) 90%,
+    var(--accent) 10%,
+    var(--accent) 90%,
     transparent 100%
   );
 }

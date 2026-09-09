@@ -10,6 +10,7 @@ const projects = [
     description:
       "A self-hosted Linux server running web applications behind Nginx and Gunicorn.",
     technologies: ["Python", "Flask", "Nginx", "Linux"],
+    href:"https://github.com/mikesiez",
   },
   {
     name: "Minecraft Server API",
@@ -17,6 +18,7 @@ const projects = [
     description:
       "A Flask API used to interact with and control a Minecraft server.",
     technologies: ["Python", "Flask", "REST API"],
+    href:"",
   },
   {
     name: "Cybersecurity Projects",
@@ -24,6 +26,7 @@ const projects = [
     description:
       "Hands-on experimentation with systems, networking, web security, and defensive techniques.",
     technologies: ["Python", "Linux", "Networking"],
+    href:"",
   },
 ];
 
@@ -37,7 +40,7 @@ function Projects() {
         <div className="appMainDiv" data-maximized={maximized}>
             <Topbar maximize={maximize} maximized={maximized} Icon={config.icon} name={config.name} desc={config.desc}/>
 
-            <div id="appContent" className="@container flex-1 min-h-0 overflow-y-auto">
+            <div id="appContent" className="appContainer">
 
                 <div className="grid grid-cols-2 gap-[2%] w-[92%] ml-[4%]">
 
@@ -45,45 +48,45 @@ function Projects() {
                         <div
                         key={project.name}
                         className="border border-white/10 rounded-[2%] p-[5%]
-                        bg-white/[0.02] hover:bg-white/[0.05]
+                        bg-white/2 hover:bg-white/5
                         hover:border-(--accent)/30 transition group"
                         >
 
-                        <div className="flex justify-between items-start">
+                            <div className="flex justify-between items-start">
 
-                            <span className="text-[2cqw] text-(--accent) font-mono">
-                            P_{String(index + 1).padStart(2, "0")}
-                            </span>
+                                <span className="text-[2cqw] text-(--accent) font-mono">
+                                P_{String(index + 1).padStart(2, "0")}
+                                </span>
 
-                            <span className="text-[1.8cqw] text-gray-600">
-                            {project.type}
-                            </span>
+                                <span className="text-[1.8cqw] text-gray-600">
+                                {project.type}
+                                </span>
 
-                        </div>
+                            </div>
 
-                        <h2 className="text-[4cqw] mt-[8%]">
-                            {project.name}
-                        </h2>
+                            <h2 className="text-[3cqw] mt-[4%]">
+                                {project.name}
+                            </h2>
 
-                        <p className="text-[2.3cqw] text-gray-400 mt-[4%] leading-relaxed">
-                            {project.description}
-                        </p>
+                            <p className="text-[2cqw] text-gray-300 mt-[2%] leading-relaxed">
+                                {project.description}
+                            </p>
 
-                        <div className="flex flex-wrap gap-[2%] mt-[8%]">
-                            {project.technologies.map(tech => (
-                            <span
-                                key={tech}
-                                className="text-[1.8cqw] text-gray-500
-                                border border-white/10 rounded px-[3%] py-[1%]"
-                            >
-                                {tech}
-                            </span>
-                            ))}
-                        </div>
+                            <div className="flex flex-wrap gap-[2%] mt-[6%]">
+                                {project.technologies.map(tech => (
+                                <span
+                                    key={tech}
+                                    className="text-[1.8cqw] text-gray-400
+                                    border border-white/20 rounded px-[3%] py-[1%]"
+                                >
+                                    {tech}
+                                </span>
+                                ))}
+                            </div>
 
-                        <div className="mt-[8%] text-[2cqw] text-(--accent) opacity-50 group-hover:opacity-100 transition">
-                            VIEW PROJECT ↗
-                        </div>
+                            <div className="mt-[6%] text-[2cqw] text-(--accent) opacity-50 group-hover:opacity-100 transition">
+                            <a target="_blank" href={project.href}> VIEW PROJECT ↗</a>
+                            </div>
 
                         </div>
                     ))}

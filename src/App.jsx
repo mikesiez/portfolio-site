@@ -12,7 +12,7 @@ function DesktopApp({name, Icon, openApp}) {
       onClick={openApp}
       >
       <Icon className="justify-self-center h-full w-auto aspect-square rounded"/>
-      <h3 className="text-[15cqw] text-shadow-cyan-300 text-center align-text-top h-full font-mono mt-[5%]">
+      <h3 className="text-[15cqw] text-shadow-[var(--accent)] text-shadow-2xs text-center align-text-top h-full font-mono mt-[5%]">
         {name}
       </h3>
     </button>
@@ -49,6 +49,11 @@ const apps = Object.entries(appFiles).map(([path, component]) => {
 });
 
 function App() {
+  const [accent, setAccent] = useState("#63d4ff");
+  useEffect(() => {
+    document.documentElement.style.setProperty("--accent", accent);
+  }, [accent]);
+
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
 
@@ -112,6 +117,12 @@ function App() {
           );
         })}
 
+        <input
+          type="color"
+          value={accent}
+          onChange={(e) => setAccent(e.target.value)}
+          className="absolute aspect-square top-[2vh] right-[4vw] rounded-[100]"
+        />
         <div className="absolute inset-0 pointer-events-none overflow-hidden"> {/* bg glows */}
           <div className="absolute rounded-full opacity-20 w-[50vw] h-[50vw] bg-(--accent) top-[-20vh] left-[-10vw] blur-[10vw]"/>
           <div className="absolute rounded-full opacity-10 w-[35vw] h-[35vw] blur-[8vw] bg-(--accent-2) bottom-[-10vh] right-[15vw]"/>
@@ -139,7 +150,7 @@ function App() {
 
         <div id="taskbar" className="h-[5%] taskbar glass">
           <div className="flex">
-            <div className="OSIcon text-[min(0.7vw,2.3vh)] flex items-center justify-center">OS</div>
+            <div onClick={() => {window.location.href="/"}} className="OSIcon text-[min(0.7vw,2.3vh)] flex items-center justify-center">OS</div>
             <p className="ml-[3%] text-gray-400/50 text-[min(0.9vw,3vh)] pt-[1%] text-center">portfolio</p>
           </div>
           <div id="taskbarApps" className="h-full w-full flex justify-center space-x-5">
