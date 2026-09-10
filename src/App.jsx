@@ -172,10 +172,19 @@ function App() {
           ))}
         </div>
         
-        <div className="absolute inset-0 pointer-events-none overflow-hidden"> {/* bg glows */}
+        {/* bg glows */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute rounded-full opacity-20 w-[50vw] h-[50vw] bg-(--accent) top-[-20vh] left-[-10vw] blur-[10vw]"/>
           <div className="absolute rounded-full opacity-10 w-[35vw] h-[35vw] blur-[8vw] bg-(--accent-2) bottom-[-10vh] right-[15vw]"/>
         </div>
+        {/* Grid dot pattern wallpaper */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `radial-gradient(circle, rgb(from var(--accent) r g b / 0.1) 4%, transparent 5%)`,
+            backgroundSize: "3vw 3vw",
+          }}
+        />
 
         <div id="desktop" className="flex-1 py-[1%] px-[1%] w-full grid grid-cols-[20vw_44vw_35vw]">
           <div id="apps" className="grid grid-cols-3 auto-rows-min gap-y-[2%] gap-x-[4%]">
