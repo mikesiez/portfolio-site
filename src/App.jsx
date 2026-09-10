@@ -34,6 +34,45 @@ function TbApp({name, Icon, active, onClick}) {
   );
 }
 
+const themes = {
+  cyan: {
+    accent: "#63d4ff",
+    accent2: "#a78bfa",
+  },
+
+  green: {
+    accent: "#4ade80",
+    accent2: "#22c55e",
+  },
+
+  red: {
+    accent: "#fb7185",
+    accent2: "#f43f5e",
+  },
+
+  orange: {
+    accent: "#fb923c",
+    accent2: "#f59e0b",
+  },
+
+  purple: {
+    accent: "#a78bfa",
+    accent2: "#c084fc",
+  },
+};
+function setTheme(theme) {
+  document.documentElement.style.setProperty(
+    "--accent",
+    themes[theme].accent
+  );
+
+  document.documentElement.style.setProperty(
+    "--accent-2",
+    themes[theme].accent2
+  );
+}
+
+
 const appFiles = import.meta.glob("./apps/*.jsx", {
   eager: true,
   import: "default"
@@ -49,10 +88,10 @@ const apps = Object.entries(appFiles).map(([path, component]) => {
 });
 
 function App() {
-  const [accent, setAccent] = useState("#63d4ff");
-  useEffect(() => {
-    document.documentElement.style.setProperty("--accent", accent);
-  }, [accent]);
+  // const [accent, setAccent] = useState("#63d4ff");
+  // useEffect(() => {
+  //   document.documentElement.style.setProperty("--accent", accent);
+  // }, [accent]);
 
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
@@ -118,12 +157,21 @@ function App() {
           );
         })}
 
-        <input
-          type="color"
-          value={accent}
-          onChange={(e) => setAccent(e.target.value)}
-          className="absolute aspect-square top-[2vh] right-[4vw] rounded-[100]"
-        />
+        <div className="absolute flex gap-[5%] left-[2vw] bottom-[7vh]">
+          {Object.entries(themes).map(([name, theme]) => (
+            <button
+              key={name}
+              onClick={() => setTheme(name)}
+              className="w-[2vw] aspect-square rounded-[10%] hover:scale-110 hover:cursor-pointer transition"
+              style={{
+                background: `linear-gradient(135deg, ${theme.accent}, ${theme.accent2})`, 
+                // border: "solid 2px",
+                // borderImage: `linear-gradient(135deg, ${theme.accent2}, ${theme.accent}) 1`,
+            }}
+            />
+          ))}
+        </div>
+        
         <div className="absolute inset-0 pointer-events-none overflow-hidden"> {/* bg glows */}
           <div className="absolute rounded-full opacity-20 w-[50vw] h-[50vw] bg-(--accent) top-[-20vh] left-[-10vw] blur-[10vw]"/>
           <div className="absolute rounded-full opacity-10 w-[35vw] h-[35vw] blur-[8vw] bg-(--accent-2) bottom-[-10vh] right-[15vw]"/>

@@ -1,4 +1,4 @@
-import { CgProfile, CgBriefcase, CgAwards, CgTerminal } from "react-icons/cg";
+import { CgProfile, CgBriefcase, CgAwards, CgTerminal, CgReadme  } from "react-icons/cg";
 
 export const appConfig = {
     profile: {
@@ -23,5 +23,11 @@ export const appConfig = {
         name: "Skills",
         desc: "What I can do",
         icon: CgTerminal,
+    },
+    
+    education : {
+        name: "Education",
+        desc: "What I know",
+        icon: CgReadme,
     },
 };
