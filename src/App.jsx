@@ -41,23 +41,23 @@ const themes = {
   },
 
   green: {
-    accent: "#4ade80",
-    accent2: "#22c55e",
+    accent: "#00e813",
+    accent2: "#00e89f",
   },
 
   red: {
-    accent: "#fb7185",
-    accent2: "#f43f5e",
+    accent: "#e80000",
+    accent2: "#e85100",
   },
 
   orange: {
     accent: "#fb923c",
-    accent2: "#f59e0b",
+    accent2: "#e8cd00",
   },
 
   purple: {
     accent: "#a78bfa",
-    accent2: "#c084fc",
+    accent2: "#e800a6",
   },
 };
 function setTheme(theme) {
@@ -71,6 +71,7 @@ function setTheme(theme) {
     themes[theme].accent2
   );
 }
+setTheme("cyan")
 
 
 const appFiles = import.meta.glob("./apps/*.jsx", {
@@ -181,7 +182,7 @@ function App() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `radial-gradient(circle, rgb(from var(--accent) r g b / 0.1) 4%, transparent 5%)`,
+            backgroundImage: `radial-gradient(circle, rgb(from var(--accent) r g b / 0.1) 2%, transparent 4%)`,
             backgroundSize: "3vw 3vw",
           }}
         />

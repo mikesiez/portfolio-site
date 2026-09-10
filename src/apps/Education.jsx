@@ -86,16 +86,16 @@ function Education({className}) {
     <div className={className} data-maximized={maximized}>
       <Topbar maximize={maximize} maximized={maximized} Icon={config.icon} name={config.name} desc={config.desc}/>
 
-      <div className="appContainer p-[3%]">
+      <div className="appContainer px-[3%]">
         
         <div className="mb-[3%]">
           <p className="text-[2cqw] text-(--accent) tracking-widest">
             // EDUCATION
           </p>
-          <h1 className="text-[3cqw] font-semibold tracking-wide">
+          <h1 className="text-[2.5cqw] font-semibold tracking-wide">
             Academic Record
           </h1>
-          <p className="text-[2cqw] text-(--text-secondary)">
+          <p className="text-[1.5cqw] text-(--text-secondary)">
             Institutions, coursework, and academic focus.
           </p>
         </div>
@@ -108,7 +108,7 @@ function Education({className}) {
             return (
               <div
                 key={school.institution}
-                className="glass rounded-[1%] overflow-hidden transition-all "
+                className="glass rounded-[1%] overflow-hidden transition-all"
               >
 
                 {/* Institution header */}
@@ -119,25 +119,25 @@ function Education({className}) {
                   <div className="flex items-center justify-between">
 
                     <div>
-                      <p className="text-[3.5cqw] font-semibold tracking-wide">
+                      <p className="text-[2.5cqw] font-semibold tracking-wide">
                         {school.institution}
                       </p>
 
-                      <p className="text-[2.4cqw] text-(--accent) leading-[3cqh]">
+                      <p className="text-[1.7cqw] text-(--accent) leading-[3cqh]">
                         {school.degree}
                       </p>
 
-                      <p className="text-[2cqw] text-(--text-secondary) mt-[0.5%]">
+                      <p className="text-[1.5cqw] text-(--text-secondary) mt-[0.5%]">
                         {school.period}
                       </p>
                     </div>
 
                     <div className="flex items-center gap-[2cqw]">
                       <div className="text-right">
-                        <p className="text-[2.2cqw] text-(--text-secondary)">
+                        <p className="text-[2cqw] text-(--text-secondary)">
                           OVERALL
                         </p>
-                        <p className="text-[3cqw] text-(--accent) font-semibold">
+                        <p className="text-[2.5cqw] text-(--accent) font-semibold">
                           {school.grade}
                         </p>
                       </div>
@@ -151,125 +151,127 @@ function Education({className}) {
                 </button>
 
                 <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        institutionOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-                    }`}
+                    className={`overflow-hidden grid transition-[grid-template-rows] duration-300 ease-in-out 
+                      ${institutionOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}
+                    `}
                 >
-                  <div className="border-t border-white/10 p-[2.5%]">
+                  <div className='min-h-0'>
+                    <div className="border-t border-white/10 p-[2.5%]">
 
-                    {/* Focus */}
-                    <div className="mb-[4%]">
-                      <p className="text-[2cqw] text-(--accent) tracking-widest mb-[1.5%]">
-                        FOCUS
-                      </p>
-
-                      <div className="flex flex-wrap gap-[1%]">
-                        {school.focus.map(item => (
-                          <span
-                            key={item}
-                            className="text-[1.5cqw] px-[1.2%] py-[0.5%] rounded bg-(--accent)/10 border border-(--accent)/20 text-(--accent)"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Courses */}
-                    {school.courses.length > 0 && (
-                      <div>
+                      {/* Focus */}
+                      <div className="mb-[4%]">
                         <p className="text-[2cqw] text-(--accent) tracking-widest mb-[1.5%]">
-                          COURSES
-                        </p>
-                        
-                        <div className="flex flex-col">
-
-                          {school.courses.map(course => {
-                            const courseOpen = openCourses.includes(course.code);
-
-                            return (
-                              <div
-                                key={course.code}
-                                className="border-b border-white/5 last:border-none"
-                              >
-
-                                <button
-                                  onClick={() => toggleCourse(course.code)}
-                                  className="w-full flex items-center justify-between py-[0.5%] text-left hover:bg-white/5 hover:cursor-pointer px-[1%] transition"
-                                >
-                                  <div className="flex items-center gap-[2%] whitespace-nowrap">
-                                    <span className="text-[2cqw] text-(--accent) font-mono">
-                                      {course.code}
-                                    </span>
-
-                                    <span className="text-[2cqw] text-white/80">
-                                      {course.name}
-                                    </span>
-                                  </div>
-
-                                  <div className="flex items-center gap-[2cqw]">
-                                    <span className="text-[3cqw] font-semibold text-white">
-                                      {course.grade}
-                                    </span>
-
-                                    <span className="text-[3cqw] text-gray-500">
-                                      {courseOpen ? "-" : "+"}
-                                    </span>
-                                  </div>
-                                </button>
-
-                                <div
-                                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                                        courseOpen ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0"
-                                    }`}
-                                >
-                                  <div className="px-[4%] pb-[2%]">
-                                    <p className="text-[2cqw] text-(--text-secondary) leading-relaxed">
-                                      {`>> ${course.details}`}
-                                    </p>
-                                  </div>
-                                </div>
-
-                              </div>
-                            );
-                          })}
-
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Electives */}
-                    {school.electives.length > 0 && (
-                      <div className="mt-[4%]">
-                        <p className="text-[1.7cqw] text-(--accent) tracking-widest">
-                          ELECTIVES
+                          FOCUS
                         </p>
 
-                        <div className="flex flex-col whitespace-nowrap">
-                          {school.electives.map(course => (
-                            <div
-                              key={course.code}
-                              className="flex items-center justify-between border-b border-white/5"
+                        <div className="flex flex-wrap gap-[1%]">
+                          {school.focus.map(item => (
+                            <span
+                              key={item}
+                              className="text-[1.5cqw] px-[1.2%] py-[0.5%] rounded bg-(--accent)/10 border border-(--accent)/20 text-(--accent)"
                             >
-                              <div className='ml-[1%]'>
-                                <span className="text-[2cqw] text-(--accent) font-mono">
-                                  {course.code}
-                                </span>
-
-                                <span className="text-[2cqw] text-white/80 ml-[3%]">
-                                  {course.name}
-                                </span>
-                              </div>
-
-                              <span className="text-[2.5cqw] py-[0.3%] font-semibold">
-                                {course.grade}
-                              </span>
-                            </div>
+                              {item}
+                            </span>
                           ))}
                         </div>
                       </div>
-                    )}
 
+                      {/* Courses */}
+                      {school.courses.length > 0 && (
+                        <div>
+                          <p className="text-[2cqw] text-(--accent) tracking-widest mb-[0.5%]">
+                            COURSES
+                          </p>
+                          
+                          <div className="flex flex-col">
+
+                            {school.courses.map(course => {
+                              const courseOpen = openCourses.includes(course.code);
+
+                              return (
+                                <div
+                                  key={course.code}
+                                  className="border-b border-white/5 last:border-none"
+                                >
+
+                                  <button
+                                    onClick={() => toggleCourse(course.code)}
+                                    className="w-full flex items-center justify-between py-[0.5%] text-left hover:bg-white/5 hover:cursor-pointer px-[1%] transition"
+                                  >
+                                    <div className="flex items-center gap-[2%] whitespace-nowrap">
+                                      <span className="text-[1.5cqw] text-(--accent) font-mono">
+                                        {course.code}
+                                      </span>
+
+                                      <span className="text-[1.5cqw] text-white/80">
+                                        {course.name}
+                                      </span>
+                                    </div>
+
+                                    <div className="flex items-center gap-[2cqw]">
+                                      <span className="text-[2cqw] font-semibold text-white">
+                                        {course.grade}
+                                      </span>
+
+                                      <span className="text-[2cqw] text-gray-500">
+                                        {courseOpen ? "-" : "+"}
+                                      </span>
+                                    </div>
+                                  </button>
+
+                                  <div
+                                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                                          courseOpen ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0"
+                                      }`}
+                                  >
+                                    <div className="px-[4%] pb-[2%]">
+                                      <p className="text-[1.5cqw] text-(--text-secondary) leading-relaxed">
+                                        {`>> ${course.details}`}
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              );
+                            })}
+
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Electives */}
+                      {school.electives.length > 0 && (
+                        <div className="mt-[4%]">
+                          <p className="text-[1.7cqw] text-(--accent) tracking-widest">
+                            ELECTIVES
+                          </p>
+
+                          <div className="flex flex-col whitespace-nowrap">
+                            {school.electives.map(course => (
+                              <div
+                                key={course.code}
+                                className="flex items-center justify-between border-b border-white/5"
+                              >
+                                <div className='ml-[1%]'>
+                                  <span className="text-[1.5cqw] text-(--accent) font-mono">
+                                    {course.code}
+                                  </span>
+
+                                  <span className="text-[1.5cqw] text-white/80 ml-[3%]">
+                                    {course.name}
+                                  </span>
+                                </div>
+
+                                <span className="text-[2cqw] py-[0.3%] font-semibold">
+                                  {course.grade}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                    </div>
                   </div>
                 </div>
 

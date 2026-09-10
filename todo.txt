@@ -1,2 +1,1 @@
-add education with courses, grade, and cgpa, seperate for electives and major courses
 grabbable windows, maybe sclaable

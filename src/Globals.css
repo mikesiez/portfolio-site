@@ -9,6 +9,7 @@ body {
   color: white;
   background-color: rgb(20, 20, 20);
   font-family: 'Exo 2', sans-serif;
+  /* font-family:'JetBrains Mono', 'Fira Code', monospace; */
 }
 body::after {
   content: '';
@@ -59,7 +60,7 @@ body::after {
   }
   .appIcon {
     @apply 
-    hover:shadow-[0_0_0.7vh_var(--accent)]
+    hover:shadow-[0_0_0.7vh_var(--accent-2)]
     hover:scale-105  hover:cursor-pointer 
     rounded-[4%]
     overflow-visible transition
@@ -92,11 +93,11 @@ body::after {
       overflow-hidden
   }
   .appMainDiv[data-maximized="true"]{
-    @apply w-full h-full m-0
+    @apply w-full h-full m-0 border-none rounded-none
   }
   .appContainer{
     @apply
-      @container flex-1 min-h-0 overflow-y-auto pt-[2%]
+      @container flex-1 min-h-0 overflow-y-auto py-[2%]
   }
 }
 

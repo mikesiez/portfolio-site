@@ -31,7 +31,7 @@ function ProfCard() {
       bg-[linear-gradient(to_right,transparent_0%,var(--accent)_10%,var(--accent)_90%,transparent_100%)]"/>
 
       <div className="flex w-[60%] h-[5%] ml-[5%] items-center">
-        <span className="rounded-full h-[30%] aspect-square bg-[#4ade80] shadow-[0_0_6px_#4ade80]"/>
+        <span className="rounded-full h-[30%] aspect-square bg-(--accent-2) shadow-[0_0_6px_var(--accent)]"/>
         <p className="text-[min(3cqw,2cqh)] text-gray-400/70 ml-[4%] tracking-widest">Available for work</p>
       </div>
       <div id="bottom container" className="*:text-[min(3.7cqw,2.5cqh)] ml-[6%] mt-[2%] w-[88%]">
@@ -44,7 +44,7 @@ function ProfCard() {
       bg-[linear-gradient(to_right,transparent_0%,rgb(59_59_59)_10%,rgb(59_59_59)_90%,transparent_100%)] opacity-80"/>
 
       <div className="flex flex-col gap-[0.8vh] ml-[5%]">
-        <p className="text-[min(3.5cqw,2.5cqh)] text-(--accent)">// LINKS</p>
+        <p className="text-[min(4cqw,3.2cqh)] text-(--accent)">// LINKS</p>
         {profile.socials.map((social) => {
           const IconComponent = social.icon;
           return (
@@ -53,7 +53,7 @@ function ProfCard() {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-[0.5vw] text-(--text-secondary) text-[min(3.2cqw,2.5cqh)]"
+              className="flex items-center gap-[0.5vw] text-(--text-secondary) text-[min(3.8cqw,3cqh)] hover:text-(--accent-2) hover:text-[min(4cqw,3.2cqh)] transition-all"
             >
               <IconComponent className="aspect-square w-[5%]"/>
               <span>{social.platform}</span>
