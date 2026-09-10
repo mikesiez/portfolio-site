@@ -25,7 +25,7 @@ body::after {
   z-index: 9999;
 }
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 0.3vw; }
+::-webkit-scrollbar { width: 0.2vw; height: 0.5vh; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 0.2vw; }
 
@@ -59,7 +59,7 @@ body::after {
   }
   .appIcon {
     @apply 
-    hover:shadow-lg shadow-cyan-500/30 
+    hover:shadow-[0_0_0.7vh_var(--accent)]
     hover:scale-105  hover:cursor-pointer 
     rounded-[4%]
     overflow-visible transition
@@ -79,7 +79,7 @@ body::after {
   }
   .OSIcon {
     @apply 
-    rounded-[25%] w-[1.8vw] aspect-square 
+    rounded-[25%] w-[min(1.8vw,4vh)] aspect-square 
      text-black font-bold
     bg-(--accent) hover:bg-(--accent-2) hover:cursor-pointer shadow-lg hover:shadow-white/50
     transition-colors
@@ -89,7 +89,7 @@ body::after {
     glass
     w-[70vw] h-[70vh] ml-[15vw] mt-[15vh]
     rounded absolute z-100 transition-all
-    flex flex-col overflow-hidden
+      overflow-hidden
   }
   .appMainDiv[data-maximized="true"]{
     @apply w-full h-full m-0

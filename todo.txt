@@ -1,4 +1,2 @@
-fix shadow not ampping to color (cant tailwind it apparentyl)
-add education with courses, grade, and cgpa
-seperate for electives and major courses
-grabbable windows, maybe sclaable and saved state. just hidden based on usestate's thing via {} render
+add education with courses, grade, and cgpa, seperate for electives and major courses
+grabbable windows, maybe sclaable

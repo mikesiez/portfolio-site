@@ -12,7 +12,7 @@ function DesktopApp({name, Icon, openApp}) {
       onClick={openApp}
       >
       <Icon className="justify-self-center h-full w-auto aspect-square rounded"/>
-      <h3 className="text-[15cqw] text-shadow-[var(--accent)] text-shadow-2xs text-center align-text-top h-full font-mono mt-[5%]">
+      <h3 className="text-[15cqw] text-center align-text-top h-full font-mono mt-[5%]">
         {name}
       </h3>
     </button>
@@ -105,7 +105,7 @@ function App() {
     <section id="main" className="relative flex flex-col h-screen w-screen border-0.5 border-gray-400 bg-(--bg-primary)">
         
         {openApps.map(appId => {
-          if (appId !== activeApp) return null;
+          // if (appId !== activeApp) return null;
           const app = apps.find(a => a.id === appId);
 
           const AppComponent = app.component;
@@ -113,6 +113,7 @@ function App() {
           return (
             <AppComponent
               key={app.id}
+              className={`appMainDiv ${app.id == activeApp ? "flex flex-col" : "hidden"}`}
             />
           );
         })}
@@ -150,8 +151,8 @@ function App() {
 
         <div id="taskbar" className="h-[5%] taskbar glass">
           <div className="flex">
-            <div onClick={() => {window.location.href="/"}} className="OSIcon text-[min(0.7vw,2.3vh)] flex items-center justify-center">OS</div>
-            <p className="ml-[3%] text-gray-400/50 text-[min(0.9vw,3vh)] pt-[1%] text-center">portfolio</p>
+            <div onClick={() => {window.location.href="/"}} className="OSIcon text-[min(0.7vw,1.8vh)] flex items-center justify-center">OS</div>
+            <p className="mt-[1.1%] pl-[3%] text-gray-400/50 text-[min(0.9vw,2.2vh)] text-center">portfolio</p>
           </div>
           <div id="taskbarApps" className="h-full w-full flex justify-center space-x-5">
 

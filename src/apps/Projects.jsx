@@ -30,14 +30,14 @@ const projects = [
   },
 ];
 
-function Projects() {
+function Projects({className}) {
     const [maximized, setMaximized] = useState(false)
     function maximize() {
         setMaximized(!maximized);
     }
 
     return (
-        <div className="appMainDiv" data-maximized={maximized}>
+        <div className={className} data-maximized={maximized}>
             <Topbar maximize={maximize} maximized={maximized} Icon={config.icon} name={config.name} desc={config.desc}/>
 
             <div id="appContent" className="appContainer">
