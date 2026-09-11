@@ -5,19 +5,19 @@ const config = appConfig.skills
 
 const skills = {
   Programming: [
-    ["Python", 90],
-    ["JavaScript", 80],
+    ["Python", 85],
+    ["JavaScript", 82],
     ["C", 75],
   ],
   Systems: [
-    ["Linux", 85],
+    ["Linux", 80],
     ["Networking", 75],
     ["Git", 85],
   ],
   Web: [
-    ["React", 80],
-    ["Flask", 80],
-    ["Tailwind", 80],
+    ["React", 70],
+    ["Flask", 75],
+    ["Tailwind", 70],
   ],
 };
 

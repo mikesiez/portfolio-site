@@ -8,8 +8,8 @@ const education = [
     institution: "Carleton University",
     degree: "Bachelor of Cybersecurity",
     period: "2025 - 2029",
-    grade: "In progress",
-    focus: ["Cybersecurity", "Systems", "Web Development"],
+    grade: "11.85 CGPA",
+    focus: ["Cybersecurity", "Computer Science"],
     courses: [
       {
         code: "COMP 2401",
@@ -20,30 +20,30 @@ const education = [
       {
         code: "COMP 2406",
         name: "Fundamentals of Web Applications",
-        grade: "A",
+        grade: "A+",
         details: "HTML, CSS, JavaScript, HTTP/S, JSON/AJAX, Node.js, Express, MongoDB, sessions, and cookies."
       },
       {
         code: "COMP 1805",
         name: "Discrete Structures I",
-        grade: "A",
+        grade: "A+",
         details: "Proofs, logic, graphs, sets, relations, algorithms, and asymptotic analysis."
       },
       {
         code: "COMP 1406",
         name: "Introduction to Computer Science II",
-        grade: "A",
+        grade: "A+",
         details: "Object-oriented programming and software development using Java."
       },
       {
         code: "COMP 1405",
         name: "Introduction to Computer Science I",
-        grade: "A",
+        grade: "A+",
         details: "Programming fundamentals using Python."
       }
     ],
     electives: [
-      {name:"Mysteries of the Mind",code:"CGSC 1001",grade:"A+"}
+      {name:"Mysteries of the Mind",code:"CGSC 1001",grade:"In Progress"}
     ]
   },
   {

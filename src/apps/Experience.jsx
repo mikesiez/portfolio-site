@@ -17,7 +17,7 @@ const experiences = [
       "Helped troubleshoot projects and explain programming concepts",
       "Worked with students of different experience levels",
     ],
-    skills: ["Programming", "Teaching", "Problem Solving"],
+    skills: ["Programming", "Teaching", "Problem Solving", "Teamwork", "Hardware/Software", "Game Development", "Sound Design", "Animation"],
   },
   {
     title: "Hackathon Organizer",
@@ -31,7 +31,7 @@ const experiences = [
       "Working with sponsors and campus organizations",
       "Helping plan the event schedule and competition infrastructure",
     ],
-    skills: ["Logistics", "Coordination", "Event Planning"],
+    skills: ["Logistics", "Coordination", "Event Planning", "Teamwork", "Project Management"],
   },
 ];
 
@@ -99,11 +99,11 @@ function ExperienceCard({ experience, index }) {
               </ul>
             </div>
 
-            <div className="mt-[3%] flex flex-wrap gap-[1.5%]">
+            <div className="mt-[2%] flex flex-wrap gap-[1.5%]">
               {experience.skills.map(skill => (
                 <span
                   key={skill}
-                  className="text-[1.7cqw] px-[2%] py-[0.5%] rounded-full
+                  className="text-[1.7cqw] px-[2%] py-[0.5%] mt-[1%] rounded-full
                   border border-(--accent)/30
                   text-(--accent)
                   bg-(--accent)/5"

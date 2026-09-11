@@ -10,24 +10,24 @@ const projects = [
     description:
       "A self-hosted Linux server running web applications behind Nginx and Gunicorn.",
     technologies: ["Python", "Flask", "Nginx", "Linux"],
-    href:"https://github.com/mikesiez",
+    href:"https://github.com/mikesiez/py-webserver",
   },
   {
     name: "Minecraft Server API",
     type: "Backend",
     description:
       "A Flask API used to interact with and control a Minecraft server.",
-    technologies: ["Python", "Flask", "REST API"],
-    href:"",
+    technologies: ["Python", "Flask"],
+    href:"https://github.com/mikesiez/py-webserver",
   },
-  {
-    name: "Cybersecurity Projects",
-    type: "Security",
-    description:
-      "Hands-on experimentation with systems, networking, web security, and defensive techniques.",
-    technologies: ["Python", "Linux", "Networking"],
-    href:"",
-  },
+//   {
+//     name: "Cybersecurity Projects",
+//     type: "Security",
+//     description:
+//       "Hands-on experimentation with systems, networking, web security, and defensive techniques.",
+//     technologies: ["Python", "Linux", "Networking"],
+//     href:"",
+//   },
 ];
 
 function Projects({className}) {
