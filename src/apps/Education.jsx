@@ -40,6 +40,9 @@ const education = [
         name: "Introduction to Computer Science I",
         grade: "A+",
         details: "Programming fundamentals using Python."
+      },
+      {
+        code: "MATH 1007"
       }
     ],
     electives: [
