@@ -21,7 +21,7 @@ const education = [
         code: "COMP 2406",
         name: "Fundamentals of Web Applications",
         grade: "A+",
-        details: "HTML, CSS, JavaScript, HTTP/S, JSON/AJAX, Node.js, Express, MongoDB, sessions, and cookies."
+        details: "HTML, CSS, JavaScript, HTTP/S, JSON/AJAX, Pug, Node.js, Express, REST, MongoDB, sessions, and cookies."
       },
       {
         code: "COMP 1805",
