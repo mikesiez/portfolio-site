@@ -158,6 +158,7 @@ function App() {
           );
         })}
 
+        {/*theme selection*/}
         <div className="absolute flex gap-[5%] left-[2vw] bottom-[7vh]">
           {Object.entries(themes).map(([name, theme]) => (
             <button
@@ -172,6 +173,11 @@ function App() {
             />
           ))}
         </div>
+
+        {/*wip banner*/}
+        <h1 className="absolute ml-[45vw] mt-[25vh] opacity-35 rotate-350 overflow-hiddens text-[min(5vh,12vw)] tracking-widest font-bold">
+          W.I.P.
+        </h1>
         
         {/* bg glows */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
