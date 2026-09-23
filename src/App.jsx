@@ -215,7 +215,7 @@ function App() {
 
         <div id="taskbar" className="h-[5%] taskbar glass">
           <div className="flex">
-            <div onClick={() => {window.location.href="/"}} className="OSIcon text-[min(0.7vw,1.8vh)] flex items-center justify-center">OS</div>
+            <div onClick={() => {window.location.href="/"}} className="OSIcon text-[min(0.8vw,1.8vh)] flex items-center justify-center">OS</div>
             <p className="mt-[1.1%] pl-[3%] text-gray-400/50 text-[min(0.9vw,2.2vh)] text-center">portfolio</p>
           </div>
           <div id="taskbarApps" className="h-full w-full flex justify-center space-x-5">

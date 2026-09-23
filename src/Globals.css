@@ -82,8 +82,8 @@ body::after {
     @apply 
     rounded-[25%] w-[min(1.8vw,4vh)] aspect-square 
      text-black font-bold
-    bg-(--accent) hover:bg-(--accent-2) hover:cursor-pointer shadow-lg hover:shadow-white/50
-    transition-colors
+    bg-(--accent) hover:bg-(--accent-2) hover:cursor-pointer shadow-[0_0_5px_var(--accent-2)] hover:shadow-[0_0_20px_var(--accent)]
+    transition-colors transition-shadow
   }
   .appMainDiv{
     @apply 
@@ -98,6 +98,9 @@ body::after {
   .appContainer{
     @apply
       @container flex-1 min-h-0 overflow-y-auto py-[2%]
+  }
+  .gg {
+    @apply bg-gradient-to-br from-orange-200 to-yellow-500 bg-clip-text text-transparent
   }
 }
 

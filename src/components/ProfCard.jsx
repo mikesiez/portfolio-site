@@ -16,13 +16,15 @@ const profile = {
 function ProfCard() {
   return (
     <div id="profileCard" className="@container glass rounded-[2%] h-[85%] mt-[10%] w-[90%] ">
-      <div className="absolute top-0 left-0 right-0 h-[0.1vh] bg-[linear-gradient(90deg,transparent,var(--accent),transparent)]"/> {/*top gradient*/}
+      <div className="absolute top-0 left-0 right-0 h-[0.3vh] bg-[linear-gradient(90deg,transparent,var(--accent),transparent)]"/> {/*top gradient*/}
       
       <div id="profTop" className="items-center w-[75%] h-[20%] grid grid-rows-1 grid-cols-[25%_75%] ml-[5%] mt-[5%]">
         <img src={profile.avatar}
           className="glass rounded-[9%] h-[min(6vw,12vh)] w-[min(6vw,12vh)] justify-self-center"/>
+          {/* <span className="absolute top-[2.8cqh] left-[2cqw] rotate-325 text-[min(4.5cqw,4cqh)]">👑</span> */}
         <div className="pl-[5%]">
-          <h1 className="text-[min(5cqw,3cqh)] tracking-wide">{profile.name}</h1>
+          <h1 className="text-[min(5cqw,3cqh)] tracking-wide">
+            <strong className="gg">M</strong>ichael <strong className="gg">Al</strong> Houway<strong className="gg">ek</strong></h1>
           <h1 className="text-[min(2.8cqw,1.8cqh)] tracking-wide text-(--accent)">{profile.title}</h1>
         </div>
       </div> 
